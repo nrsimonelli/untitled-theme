@@ -21,6 +21,16 @@ export const CATEGORIES = [
   'base',
 ] as const;
 
+export type ColorCategories =
+  | 'info'
+  | 'success'
+  | 'danger'
+  | 'attention'
+  | 'severe'
+  | 'done'
+  | 'base'
+  | 'other';
+
 export type ColorOptions =
   | 'blue'
   | 'sky'
@@ -49,37 +59,11 @@ export type ColorOptions =
   | 'olive'
   | 'sand';
 
-interface PaletteProps {
-  name:
-    | 'blue'
-    | 'sky'
-    | 'cyan'
-    | 'teal'
-    | 'green'
-    | 'grass'
-    | 'mint'
-    | 'lime'
-    | 'yellow'
-    | 'amber'
-    | 'orange'
-    | 'brown'
-    | 'tomato'
-    | 'red'
-    | 'crimson'
-    | 'pink'
-    | 'plum'
-    | 'purple'
-    | 'violet'
-    | 'indigo'
-    | 'gray'
-    | 'mauve'
-    | 'slate'
-    | 'sage'
-    | 'olive'
-    | 'sand';
+export interface PaletteProps {
+  name: ColorOptions;
   emphasis: 'white' | 'black';
   grayScale: 'gray' | 'mauve' | 'slate' | 'sand' | 'olive' | 'sage';
-  tag: string;
+  tag: ColorCategories;
 }
 
 export const PALETTE: PaletteProps[] = [

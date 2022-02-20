@@ -3,7 +3,12 @@ import { Box } from './components/Box';
 import { Flex, PaletteRow } from './components/Flex';
 import PaletteCard from './components/PaletteCard';
 import { ThemeToggle } from './components/ThemeToggle';
-import { CATEGORIES, PALETTE, ColorOptions } from './constants';
+import {
+  CATEGORIES,
+  PALETTE,
+  ColorOptions,
+  PaletteProps,
+} from './constants';
 import { globalCss } from './stitches.config';
 
 const globalStyles = globalCss({
@@ -18,6 +23,8 @@ const globalStyles = globalCss({
     padding: 0,
     bg: '$gray2',
     color: '$hiContrast',
+    cursor: 'default',
+    userSelect: 'none',
   },
 });
 
@@ -29,6 +36,7 @@ interface InitialState {
   attention: ColorOptions;
   severe: ColorOptions;
   base: ColorOptions;
+  other: ColorOptions;
 }
 
 const App = () => {
@@ -41,10 +49,26 @@ const App = () => {
     attention: 'yellow',
     severe: 'brown',
     base: 'slate',
+    other: 'pink',
   });
+
+  const isRowSelected = (color: PaletteProps) => {
+    if (color.name === state[color.tag]) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   const findColorIndex = (color: ColorOptions) => {
     return PALETTE.findIndex((obj) => obj.name === color);
+  };
+
+  const handleRowClick = (color: PaletteProps) => {
+    setState((i) => ({
+      ...i,
+      [color.tag]: color.name,
+    }));
   };
 
   return (
@@ -67,6 +91,7 @@ const App = () => {
         </Box>
         <ThemeToggle></ThemeToggle>
       </Flex>
+
       <Flex
         direction={'column'}
         align={{ '@initial': 'center' }}
@@ -93,6 +118,8 @@ const App = () => {
             key={color.name}
             direction={'row'}
             wrap={'wrap'}
+            isSelected={isRowSelected(color)}
+            onClick={() => handleRowClick(color)}
             css={{ mt: '$3' }}
           >
             <PaletteCard
@@ -129,7 +156,9 @@ const App = () => {
           p: '$3',
           order: '1',
           flex: '1 0 auto',
-          '@bp5': { order: '2' },
+          '@bp5': {
+            order: '2',
+          },
         }}
       >
         <Box
@@ -148,6 +177,7 @@ const App = () => {
         </Box>
         {CATEGORIES.map((category) => (
           <Flex
+            key={category}
             direction={'row'}
             align={'center'}
             // justify={'start'}

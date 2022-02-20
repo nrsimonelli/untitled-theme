@@ -73,13 +73,15 @@ export const Flex = styled('div', {
 export const PaletteRow = styled(Flex, {
   borderRadius: '$2',
   outlineOffset: '8px',
+  $$box: '$bg2',
   '&:hover': {
-    outline: '1px solid $bg9',
+    outline: '1px solid $purple8',
   },
   variants: {
     isSelected: {
       true: {
-        outline: '2px solid $bg9',
+        boxShadow:
+          '$colors$bg2 0px 0px 0px 7px, $colors$purple8 0px 0px 1px 8px',
       },
     },
   },
