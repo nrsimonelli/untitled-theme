@@ -6,12 +6,12 @@
 
 on grayscales
 
-> gray -> true gray
-> mauve -> purple hue
-> slate -> blue hue
-> sage -> green hue
-> olive -> lime hue
-> sand -> yellow hue
+- gray -> true gray
+- mauve -> purple hue
+- slate -> blue hue
+- sage -> green hue
+- olive -> lime hue
+- sand -> yellow hue
 
 ## semantic alias based on functionality
 
@@ -21,38 +21,38 @@ on grayscales
 
 ### info
 
-> blue
-> sky
-> cyan
+- blue
+- sky
+- cyan
 
 ### success
 
-> teal
-> green
-> grass
-> mint
+- teal
+- green
+- grass
+- mint
 
 ### attention
 
-> yellow
-> amber
+- yellow
+- amber
 
 ### danger
 
-> red
-> tomato
-> crimson
+- red
+- tomato
+- crimson
 
 ### severe
 
-> orange
-> brown
+- orange
+- brown
 
 ### done
 
-> purple
-> violet
-> plumb
+- purple
+- violet
+- plumb
 
 ### accent
 
