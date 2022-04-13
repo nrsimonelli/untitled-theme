@@ -82,6 +82,7 @@ export const PaletteRow = styled(Flex, {
       true: {
         boxShadow:
           '$colors$bg2 0px 0px 0px 7px, $colors$purple8 0px 0px 1px 8px',
+        outline: '1px solid $purple8',
       },
     },
   },

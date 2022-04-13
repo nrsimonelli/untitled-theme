@@ -77,7 +77,7 @@ const App = () => {
         direction={'row'}
         justify={'between'}
         align={'center'}
-        css={{ width: '$vw', bg: '$gray4', p: '$3' }}
+        css={{ width: '$vw', bg: '$gray4', px: '$3' }}
       >
         <Box
           css={{
@@ -87,7 +87,7 @@ const App = () => {
             py: '$3',
           }}
         >
-          Untitled
+          Untitled Theme
         </Box>
         <ThemeToggle></ThemeToggle>
       </Flex>

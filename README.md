@@ -1,4 +1,4 @@
-# Untitled
+# Untitled Theme
 
 ## Colors
 
